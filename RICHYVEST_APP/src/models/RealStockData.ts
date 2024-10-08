@@ -1,11 +1,8 @@
 const performanceData = require('./performance.json');
 
-console.log('Performance Data:', performanceData);
-
 // Function to get the 10th dataset as an array of key-value pairs
 function getTenthDataset(data: { [x: string]: any; }) {
   const tenthDataset = data["10"];
-  console.log('Tenth Dataset:', tenthDataset);
   return Object.entries(tenthDataset);
 }
 
@@ -34,7 +31,6 @@ const generateStockData = (): StockData[] => {
     const formattedDate = formatDateToMonthYear(date);
     stockData.push({ date: formattedDate, price: Number(price) });
   }
-  console.log('Generated Stock Data:', stockData);
   return stockData;
 }
 // Export the generated data
