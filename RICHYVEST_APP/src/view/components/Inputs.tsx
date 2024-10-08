@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from 'react';
+import { stockData, availableDates } from '../../models/RealStockData';
 
-// components needed for user inetraction
+// Components needed for user interaction
 
 function InputAmount({ amount, handleChange }: 
     { amount: string, handleChange: (e: ChangeEvent<HTMLInputElement>) => void }) {
@@ -19,18 +20,22 @@ function InputAmount({ amount, handleChange }:
     );
   }
 
-function InputYear({ year, handleChange }: { year: number, handleChange: (e: ChangeEvent<HTMLInputElement>) => void }) {
+  function InputDate({ date, handleChange }: { date: string, handleChange: (e: ChangeEvent<HTMLSelectElement>) => void }) {
     return (
       <div>
         <p>in our Exchange-Traded Fund in</p>
-        <input 
-          type="number" 
-          value={year} 
+        <select 
+          value={date} 
           onChange={handleChange} 
-          min="1980" 
-          max="2024" 
           className="border rounded text-black h-6 inline-block"
-        />
+        >
+          <option value="" disabled>Select a date</option>
+          {availableDates.map((availableDate) => (
+            <option key={availableDate} value={availableDate}>
+              {availableDate}
+            </option>
+          ))}
+        </select>
       </div>
     );
   }
@@ -58,4 +63,4 @@ function Button() {
     );
   }
 
-export { InputAmount, InputYear, Result, Button };
+export { InputAmount, InputDate, Result, Button };

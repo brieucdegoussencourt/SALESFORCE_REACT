@@ -1,56 +1,64 @@
 import { useState, ChangeEvent } from 'react';
-import { stockData } from './FakeStockData';
+import { stockData } from './RealStockData';
 
 // Custom hook to manage the state and logic 
 // for calculating stock value
 
 export const useGuessModel = () => {
-  const today = new Date().getFullYear();
+  const today = new Date();
+  const todayFormatted = `${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getFullYear()}`;
   const [amount, setAmount] = useState<string>('100');
-  const [year, setYear] = useState<number>(2024);
+  const [date, setDate] = useState<string>('01/2024');
   const [result, setResult] = useState<number>(100);
-
-  const getStockPriceByYear = (year: number): number | null => {
-    const data = stockData.find((d) => d.year === year);
+  
+  console.log('Stock Data:', stockData);
+  
+  const getStockPriceByDate = (date: string): number | null => {
+    console.log(`Fetching stock price for date: ${date}`);
+    const data = stockData.find((d) => d.date === date);
+    console.log(`Found data: ${data ? JSON.stringify(data) : 'No data found'}`);
     return data ? data.price : null;
   };
-
-  const calculateResult = async (amount: string, year: number): Promise<void> => {
-    if (!amount) {
+  
+  const calculateResult = (amount: string, date: string) => {
+    console.log(`Calculating result for amount: ${amount}, date: ${date}`);
+    
+    const enteredDateValue = getStockPriceByDate(date);
+    const todayValue = getStockPriceByDate(todayFormatted);
+    
+    console.log(`Stock price on entered date: ${enteredDateValue}, Stock price today: ${todayValue}`);
+    
+    if (enteredDateValue === null || todayValue === null) {
       setResult(0);
       return;
     }
-  
-    const enteredYearValue = getStockPriceByYear(year);
-    const todayValue = getStockPriceByYear(today);
-  
-    if (enteredYearValue === null || todayValue === null) {
-      setResult(0);
-      return;
-    }
-  
+    
     // Calculate the result and format with two decimal places and thousand separators
-    const calculatedResult = (parseFloat(amount) / enteredYearValue) * todayValue;
+    const calculatedResult = (parseFloat(amount) / enteredDateValue) * todayValue;
+    console.log(`Calculated result: ${calculatedResult}`);
     setResult(parseFloat(calculatedResult.toFixed(2))); // Limit result to 2 decimals
   };
-
+  
   const handleAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setAmount(e.target.value);
-    calculateResult(e.target.value, year); // Recalculate when amount changes
+    const newAmount = e.target.value;
+    console.log(`Amount changed: ${newAmount}`);
+    setAmount(newAmount);
+    calculateResult(newAmount, date); // Recalculate when amount changes
   };
-
-  const handleYearChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newYear = parseInt(e.target.value);
-    setYear(newYear);
-    calculateResult(amount, newYear); // Recalculate when year changes
+  
+  const handleDateChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const newDate = e.target.value;
+    console.log(`Date changed: ${newDate}`);
+    setDate(newDate);
+    calculateResult(amount, newDate); // Recalculate when date changes
   };
-
+  
   return {
     amount,
-    year,
+    date,
     result,
     handleAmountChange,
-    handleYearChange,
+    handleDateChange,
     calculateResult,
   };
 };
