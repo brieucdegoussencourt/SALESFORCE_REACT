@@ -1,3 +1,4 @@
+
 // Function to generate an array of fake stock data 
 // from 1980 to 2024 with an 8% annual return
 
@@ -24,6 +25,9 @@ interface StockData {
   
     return stockData;
   };
+
+
   
   // Export the generated data
   export const stockData = generateStockData();
+  console.log(stockData);

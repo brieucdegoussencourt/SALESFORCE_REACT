@@ -1,17 +1,17 @@
 import React from 'react';
 import { useGuessModel } from '../models/model';
-import {InputAmount, InputYear, Result, Button } from '../view/components/Inputs';
+import {InputAmount, InputDate, Result, Button } from '../view/components/Inputs';
 import Title from '../view/components/Title';
 
 function Guess() {
-  const { amount, year, result, handleAmountChange, handleYearChange, calculateResult } = useGuessModel();
+  const { amount, date, result, handleAmountChange, handleDateChange, calculateResult } = useGuessModel();
 
   return (
     <div>
       <Title />
         <div className='leading-7'>  
             <InputAmount amount={amount} handleChange={handleAmountChange} />
-            <InputYear year={year} handleChange={handleYearChange} />
+            <InputDate date={date} handleChange={handleDateChange} />
             <Result result={result ?? 0} />
         </div>
       <Button />
