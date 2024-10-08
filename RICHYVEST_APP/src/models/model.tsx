@@ -8,7 +8,7 @@ export const useGuessModel = () => {
   const today = new Date();
   const todayFormatted = `${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getFullYear()}`;
   const [amount, setAmount] = useState<string>('100');
-  const [date, setDate] = useState<string>('01/2024');
+  const [date, setDate] = useState<string>('10/2024');
   const [result, setResult] = useState<number>(100);
   
   console.log('Stock Data:', stockData);
