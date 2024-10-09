@@ -38,3 +38,20 @@ export const stockData = generateStockData();
 
 // Extract available dates from stockData
 export const availableDates = stockData.map(data => data.date);
+
+export const getStockPricesInRange = (startDate: string, endDate: string) => {
+  console.log(`Fetching stock prices from ${startDate} to ${endDate}`);
+  
+  const [startMonth, startYear] = startDate.split('/');
+  const start = new Date(`${startYear}-${startMonth}-01`);
+  const end = new Date(endDate);
+
+  const filteredData = stockData.filter(data => {
+    const [month, year] = data.date.split('/');
+    const date = new Date(`${year}-${month}-01`);
+    return date >= start && date <= end;
+  });
+
+  console.log('Filtered Data:', filteredData);
+  return filteredData;
+};

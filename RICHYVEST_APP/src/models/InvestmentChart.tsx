@@ -1,33 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import 'chartjs-adapter-date-fns';
+import { Chart, ChartOptions, TimeScale, Filler, LineController, LineElement, PointElement, LinearScale, Title } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { Chart, registerables } from 'chart.js';
+import React, { useState, useEffect } from 'react';
+import { getStockPricesInRange } from './RealStockData';
 
-Chart.register(...registerables);
-
-const generateDateRange = (startDate: string, endDate: string): string[] => {
-  console.log('Generating date range from', startDate, 'to', endDate);
-
-  // Convert startDate from 'MM/YYYY' to 'YYYY-MM-DD'
-  const [month, year] = startDate.split('/');
-  const start = new Date(`${year}-${month}-01`);
-  const end = new Date(endDate);
-  const dates: string[] = [];
-
-  if (isNaN(start.getTime()) || isNaN(end.getTime())) {
-    console.error('Invalid date(s) provided:', { startDate, endDate });
-    return dates;
-  }
-
-  while (start <= end) {
-    const month = start.getMonth() + 1;
-    const year = start.getFullYear();
-    dates.push(`${month < 10 ? '0' : ''}${month}/${year}`);
-    start.setMonth(start.getMonth() + 1);
-  }
-
-  console.log('Generated dates:', dates);
-  return dates;
-};
+Chart.register(TimeScale, LineController, Filler, LineElement, PointElement, LinearScale, Title);
 
 interface InvestmentChartProps {
   startDate: string;
@@ -35,51 +12,61 @@ interface InvestmentChartProps {
   finalValue: number;
 }
 
-const InvestmentChart: React.FC<InvestmentChartProps> = ({ startDate, initialInvestment, finalValue }) => {
+const InvestmentChart: React.FC<InvestmentChartProps> = ({ startDate, initialInvestment }) => {
   const [chartData, setChartData] = useState<any>({});
 
   useEffect(() => {
-    console.log('useEffect triggered');
-
-    const dateRange = generateDateRange(startDate, new Date().toISOString().slice(0, 10));
-    if (!dateRange || dateRange.length === 0) {
-      console.log('Date range is empty or undefined');
-      return;
-    }
-
-    const dataPoints = dateRange.map((date, index) => {
-      if (index === 0) return initialInvestment;
-      if (index === dateRange.length - 1) return finalValue;
-      return initialInvestment + ((finalValue - initialInvestment) / (dateRange.length - 1)) * index; // Interpolated values
+    const endDate = new Date().toISOString().slice(0, 10);
+    console.log(`Fetching data from ${startDate} to ${endDate}`);
+    const stockData = getStockPricesInRange(startDate, endDate);
+    
+    const dates = stockData.map(data => {
+      const [month, year] = data.date.split('/');
+      return `${year}-${month}-01`; // Convert to ISO format
     });
+    console.log('Dates:', dates);
+    const prices = stockData.map(data => data.price);
 
-    console.log('Date Range:', dateRange);
-    console.log('Data Points:', dataPoints);
+    const investmentValues = prices.map(price => (initialInvestment / prices[0]) * price);
 
-    setChartData({
-      labels: dateRange,
+    const newChartData = {
+      labels: dates,
       datasets: [
         {
-          label: 'Investment Return',
-          data: dataPoints,
+          label: 'Investment Value Over Time',
+          data: investmentValues,
           borderColor: 'rgba(75, 192, 192, 1)',
-          backgroundColor: 'rgba(75, 192, 192, 0.2)', // Set to a transparent color
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
           fill: true,
         },
       ],
-    });
-  }, [startDate, initialInvestment, finalValue]);
+    };
 
-  const options = {
+    console.log('Chart Data:', newChartData);
+    setChartData(newChartData);
+  }, [startDate, initialInvestment]);
+
+  const options: ChartOptions<'line'> = {
     scales: {
       x: {
-        type: 'category' as const, // Ensure type is a specific string literal
+        type: 'time',
+        time: {
+          unit: 'month',
+          tooltipFormat: 'MM/yyyy',
+          displayFormats: {
+            month: 'MM/yy',
+          },
+        },
+      },
+      y: {
+        beginAtZero: true,
+        min: initialInvestment,
       },
     },
   };
 
   return (
-    <div style={{ backgroundColor: 'white', padding: '1rem' }}>
+    <div style={{ backgroundColor: 'white', padding: '1rem', borderRadius: '10px' }}>
       {chartData.labels && chartData.datasets ? (
         <Line data={chartData} options={options} />
       ) : (
