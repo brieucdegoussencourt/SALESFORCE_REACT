@@ -13,7 +13,7 @@ function InputAmount({ amount, handleChange }:
           value={amount} 
           onChange={handleChange} 
           placeholder="Enter amount here" 
-          className="border rounded placeholder-gray-700 text-black h-6 inline-block w-auto"
+          className="border rounded placeholder-gray-700 text-black h-7 p-1 inline-block w-auto"
         />
         <p className='inline-block ml-2'>euros</p>
       </div>

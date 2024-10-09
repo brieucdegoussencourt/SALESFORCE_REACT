@@ -1,15 +1,12 @@
 const performanceData = require('./performance.json');
 
-console.log('Performance Data:', performanceData);
-
 // Function to get the 10th dataset as an array of key-value pairs
 function getTenthDataset(data: { [x: string]: any; }) {
   const tenthDataset = data["10"];
-  console.log('Tenth Dataset:', tenthDataset);
   return Object.entries(tenthDataset);
 }
 
-// Export the 10th dataset
+// Store the 10th dataset
 const RealstockData = getTenthDataset(performanceData);
 
 // Define the shape of the stock data objects
@@ -34,11 +31,24 @@ const generateStockData = (): StockData[] => {
     const formattedDate = formatDateToMonthYear(date);
     stockData.push({ date: formattedDate, price: Number(price) });
   }
-  console.log('Generated Stock Data:', stockData);
   return stockData;
 }
-// Export the generated data
 export const stockData = generateStockData();
 
 // Extract available dates from stockData
 export const availableDates = stockData.map(data => data.date);
+
+// Function to get stock prices in a given range
+export const getStockPricesInRange = (startDate: string, endDate: string) => {  
+  const [startMonth, startYear] = startDate.split('/');
+  const start = new Date(`${startYear}-${startMonth}-01`);
+  const end = new Date(endDate);
+
+  const filteredData = stockData.filter(data => {
+    const [month, year] = data.date.split('/');
+    const date = new Date(`${year}-${month}-01`);
+    return date >= start && date <= end;
+  });
+
+  return filteredData;
+};

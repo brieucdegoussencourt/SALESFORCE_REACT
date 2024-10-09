@@ -1,0 +1,20 @@
+# Ignore node_modules directory
+node_modules/
+
+# include RICHVEST_APP node_modules
+!RICHVEST_APP/node_modules/
+
+# include TODO_APP node_modules
+!TODO_APP/todo-app/node_modules/
+
+# Ignore other common files and directories
+.DS_Store
+.env
+dist/
+build/
+coverage/
+*.log
+*.lock
+.idea/
+.vscode/
+*.iml
