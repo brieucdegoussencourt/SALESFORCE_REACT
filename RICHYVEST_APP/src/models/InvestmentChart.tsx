@@ -17,16 +17,12 @@ const InvestmentChart: React.FC<InvestmentChartProps> = ({ startDate, initialInv
 
   useEffect(() => {
     const endDate = new Date().toISOString().slice(0, 10);
-    console.log(`Fetching data from ${startDate} to ${endDate}`);
     const stockData = getStockPricesInRange(startDate, endDate);
-    
     const dates = stockData.map(data => {
       const [month, year] = data.date.split('/');
       return `${year}-${month}-01`; // Convert to ISO format
     });
-    console.log('Dates:', dates);
     const prices = stockData.map(data => data.price);
-
     const investmentValues = prices.map(price => (initialInvestment / prices[0]) * price);
 
     const newChartData = {
@@ -42,7 +38,6 @@ const InvestmentChart: React.FC<InvestmentChartProps> = ({ startDate, initialInv
       ],
     };
 
-    console.log('Chart Data:', newChartData);
     setChartData(newChartData);
   }, [startDate, initialInvestment]);
 
@@ -66,7 +61,7 @@ const InvestmentChart: React.FC<InvestmentChartProps> = ({ startDate, initialInv
   };
 
   return (
-    <div style={{ backgroundColor: 'white', padding: '1rem', borderRadius: '10px' }}>
+    <div style={{ backgroundColor: 'white', padding: '1rem', borderRadius: '5px' }}>
       {chartData.labels && chartData.datasets ? (
         <Line data={chartData} options={options} />
       ) : (

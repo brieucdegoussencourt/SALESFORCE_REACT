@@ -6,7 +6,7 @@ function getTenthDataset(data: { [x: string]: any; }) {
   return Object.entries(tenthDataset);
 }
 
-// Export the 10th dataset
+// Store the 10th dataset
 const RealstockData = getTenthDataset(performanceData);
 
 // Define the shape of the stock data objects
@@ -33,12 +33,12 @@ const generateStockData = (): StockData[] => {
   }
   return stockData;
 }
-// Export the generated data
 export const stockData = generateStockData();
 
 // Extract available dates from stockData
 export const availableDates = stockData.map(data => data.date);
 
+// Function to get stock prices in a given range
 export const getStockPricesInRange = (startDate: string, endDate: string) => {  
   const [startMonth, startYear] = startDate.split('/');
   const start = new Date(`${startYear}-${startMonth}-01`);

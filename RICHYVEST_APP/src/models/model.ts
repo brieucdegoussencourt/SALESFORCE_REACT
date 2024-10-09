@@ -1,8 +1,8 @@
 import { useState, ChangeEvent } from 'react';
 import { stockData } from './RealStockData';
 
-// Custom hook to manage the state and logic 
-// for calculating stock value
+// "useGuessModel" is a custom hook that encapsulates the state and logic for calculating 
+// the stock value based on the investment amount and date.
 
 export const useGuessModel = () => {
   const today = new Date();
@@ -23,23 +23,23 @@ export const useGuessModel = () => {
       return 0;
     }
     
-    // Calculate the result and format with two decimal places
     const calculatedResult = (parseFloat(amount) / enteredDateValue) * todayValue;
-    return parseFloat(calculatedResult.toFixed(2)); // Limit result to 2 decimals
+    return parseFloat(calculatedResult.toFixed(2));
   };
 
   const [result, setResult] = useState<number>(() => calculateResult(amount, date));
   
+  // Recalculate when amount changes
   const handleAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newAmount = e.target.value;
     setAmount(newAmount);
-    setResult(calculateResult(newAmount, date)); // Recalculate when amount changes
+    setResult(calculateResult(newAmount, date));
   };
-  
+  // Recalculate when date changes
   const handleDateChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const newDate = e.target.value;
     setDate(newDate);
-    setResult(calculateResult(amount, newDate)); // Recalculate when date changes
+    setResult(calculateResult(amount, newDate));
   };
   
   return {

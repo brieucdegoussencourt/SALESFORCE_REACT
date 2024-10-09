@@ -8,9 +8,9 @@ function Guess() {
   const { amount, date, result, handleAmountChange, handleDateChange } = useGuessModel();
 
   return (
-    <div>
-      <Title />
+    <div className='App'>
       <div className='leading-7'>
+        <Title />
         <InputAmount amount={amount} handleChange={handleAmountChange} />
         <InputDate date={date} handleChange={handleDateChange} />
         <Result result={result ?? 0} />
