@@ -14,10 +14,34 @@ const Login: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement actual authentication logic (e.g., API call)
-    // For now, we'll assume login is always successful
-    login();
-    navigate('/app');
+  
+    const payload = {
+      action: 'login',
+      login: loginData.login,
+      password: loginData.password,
+    };
+  
+    try {
+      const response = await fetch('https://easyvest-dev-ed.develop.my.salesforce-sites.com/services/apexrest/api/public/User', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+  
+      const result = await response.text();
+      if (result.startsWith('Success')) {
+        // Update authentication state
+        login(); // From AuthContext
+        navigate('/app');
+      } else {
+        setMessage(result);
+      }
+    } catch (error) {
+      console.error('Error logging in:', error);
+      setMessage('Error logging in.');
+    }
   };
 
   return (

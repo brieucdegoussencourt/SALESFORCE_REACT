@@ -10,8 +10,29 @@ const Register: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement registration logic (e.g., API call to your Salesforce backend)
-    console.log('Register data:', registerData);
+  
+    const payload = {
+      action: 'register',
+      login: registerData.login,
+      email: registerData.email,
+      password: registerData.password,
+    };
+  
+    try {
+      const response = await fetch('https://easyvest-dev-ed.develop.my.salesforce-sites.com/services/apexrest/api/public/User', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+  
+      const result = await response.text();
+      setMessage(result);
+    } catch (error) {
+      console.error('Error registering user:', error);
+      setMessage('Error registering user.');
+    }
   };
 
   return (
