@@ -1,5 +1,5 @@
 @RestResource(urlMapping='/api/public/User/*')
-global with sharing class UserRestResource {
+global without sharing class UserRestResource {
 
     @HttpPost
     global static String handleRequest() {

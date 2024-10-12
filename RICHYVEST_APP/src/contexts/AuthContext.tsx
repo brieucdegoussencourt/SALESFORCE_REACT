@@ -17,7 +17,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
   const login = () => {
-    setIsAuthenticated(true); // Update with real authentication logic
+    console.log('AuthContext login() called');
+    setIsAuthenticated(true);
   };
 
   const logout = () => {

@@ -4,13 +4,13 @@ import { Navigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 
 interface ProtectedRouteProps {
-  component: React.ComponentType<any>;
+  children: JSX.Element;
 }
 
-const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ component: Component }) => {
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   const { isAuthenticated } = useContext(AuthContext);
 
-  return isAuthenticated ? <Component /> : <Navigate to="/login" replace />;
+  return isAuthenticated ? children : <Navigate to="/login" replace />;
 };
 
 export default ProtectedRoute;

@@ -1,8 +1,11 @@
 // src/components/Register.tsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Register: React.FC = () => {
+  const [message, setMessage] = useState<string | null>(null);
   const [registerData, setRegisterData] = useState({ login: '', email: '', password: '' });
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRegisterData({ ...registerData, [e.target.name]: e.target.value });
@@ -10,6 +13,7 @@ const Register: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('handleSubmit called');
   
     const payload = {
       action: 'register',
@@ -26,9 +30,25 @@ const Register: React.FC = () => {
         },
         body: JSON.stringify(payload),
       });
+      console.log('Fetch response received');
   
-      const result = await response.text();
-      setMessage(result);
+      let result = await response.text();
+      console.log('API Response:', result);
+  
+      // Remove surrounding quotes if present
+      result = result.trim();
+      if (result.startsWith('"') && result.endsWith('"')) {
+        result = result.substring(1, result.length - 1);
+      }
+      console.log('Cleaned API Response:', result);
+  
+      if (result.startsWith('Success')) {
+        console.log('Registration successful, navigating to /login');
+        navigate('/login');
+      } else {
+        console.log('Registration failed:', result);
+        setMessage(result);
+      }
     } catch (error) {
       console.error('Error registering user:', error);
       setMessage('Error registering user.');
@@ -65,6 +85,7 @@ const Register: React.FC = () => {
       <button type="submit" className="btn bg-cyan-400 text-white font-bold py-2 px-4 rounded mt-8">
         Register
       </button>
+      {message && <p>{message}</p>}
     </form>
   );
 };

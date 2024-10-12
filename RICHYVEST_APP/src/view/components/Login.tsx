@@ -3,7 +3,9 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 
+
 const Login: React.FC = () => {
+  const [message, setMessage] = useState<string | null>(null);
   const [loginData, setLoginData] = useState({ login: '', password: '' });
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -14,12 +16,14 @@ const Login: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('handleSubmit called');
   
     const payload = {
       action: 'login',
       login: loginData.login,
       password: loginData.password,
     };
+    console.log('Payload:', payload);
   
     try {
       const response = await fetch('https://easyvest-dev-ed.develop.my.salesforce-sites.com/services/apexrest/api/public/User', {
@@ -29,13 +33,26 @@ const Login: React.FC = () => {
         },
         body: JSON.stringify(payload),
       });
+      console.log('Fetch response received');
   
-      const result = await response.text();
+      let result = await response.text();
+      console.log('API Response:', result);
+  
+      // Remove surrounding quotes if present
+      result = result.trim();
+      if (result.startsWith('"') && result.endsWith('"')) {
+        result = result.substring(1, result.length - 1);
+      }
+      console.log('Cleaned API Response:', result);
+  
       if (result.startsWith('Success')) {
         // Update authentication state
+        console.log('Login successful, calling login() and navigating to /app');
         login(); // From AuthContext
         navigate('/app');
+        console.log('After navigate call');
       } else {
+        console.log('Login failed:', result);
         setMessage(result);
       }
     } catch (error) {

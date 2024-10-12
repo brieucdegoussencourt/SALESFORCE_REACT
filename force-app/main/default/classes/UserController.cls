@@ -1,4 +1,4 @@
-public with sharing class UserController {
+public without sharing class UserController {
     // Method to register a new user
     @AuraEnabled
     public static String registerUser(String login, String email, String password) {
@@ -6,6 +6,9 @@ public with sharing class UserController {
         if (String.isBlank(login) || String.isBlank(email) || String.isBlank(password)) {
             return 'Error: All fields are required.';
         }
+
+        // Convert login to lowercase
+        login = login.toLowerCase();
 
         // Check if the login already exists
         if (!Schema.sObjectType.User__c.isAccessible()) {
@@ -50,12 +53,11 @@ public with sharing class UserController {
             System.debug('Input validation failed: login or password is blank.');
             return false;
         }
-    
+
         // Convert login to lowercase
-        String loginLower = login.toLowerCase();
-        List<User__c> users = [SELECT Id, Password__c FROM User__c WHERE Login__c = :loginLower LIMIT 1];
-    
-        System.debug('Login attempt for user: ' + loginLower);
+        login = login.toLowerCase();
+
+        System.debug('Login attempt for user: ' + login);
     
         // Hash the input password
         String hashedPassword = hashPassword(password);
@@ -66,12 +68,14 @@ public with sharing class UserController {
             System.debug('Insufficient permissions to access User__c.');
             return false;
         }
-        // Query for the user by Login__c, converting to lowercase
+    
+        // Use the LIKE operator in the query for case-insensitive comparison
+        List<User__c> users = [SELECT Id, Password__c FROM User__c WHERE Login__c LIKE :login LIMIT 1];
         System.debug('Number of users found: ' + users.size());
     
         // Check if user exists
         if (users.isEmpty()) {
-            System.debug('No user found with login: ' + loginLower);
+            System.debug('No user found with login: ' + login);
             return false;
         }
     
