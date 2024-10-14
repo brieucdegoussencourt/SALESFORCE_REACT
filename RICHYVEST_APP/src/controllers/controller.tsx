@@ -8,7 +8,7 @@ function Guess() {
   const { amount, date, result, handleAmountChange, handleDateChange } = useGuessModel();
 
   return (
-    <div className='App'>
+    <div className='App mt-7'>
       <div className='leading-7'>
         <Title />
         <InputAmount amount={amount} handleChange={handleAmountChange} />

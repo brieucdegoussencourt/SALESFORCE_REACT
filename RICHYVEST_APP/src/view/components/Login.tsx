@@ -35,25 +35,24 @@ const Login: React.FC = () => {
       });
       console.log('Fetch response received');
   
-      let result = await response.text();
-      console.log('API Response:', result);
+      let responseText = await response.text();
+      console.log('API Response:', responseText);
   
-      // Remove surrounding quotes if present
-      result = result.trim();
-      if (result.startsWith('"') && result.endsWith('"')) {
-        result = result.substring(1, result.length - 1);
+      // Clean the response text
+      responseText = responseText.trim();
+      if (responseText.startsWith('"') && responseText.endsWith('"')) {
+        responseText = responseText.substring(1, responseText.length - 1);
       }
-      console.log('Cleaned API Response:', result);
+      console.log('Cleaned API Response:', responseText);
   
-      if (result.startsWith('Success')) {
-        // Update authentication state
+      // Determine success or failure based on response text
+      if (responseText.startsWith('Success')) {
         console.log('Login successful, calling login() and navigating to /app');
         login(); // From AuthContext
         navigate('/app');
-        console.log('After navigate call');
       } else {
-        console.log('Login failed:', result);
-        setMessage(result);
+        console.log('Login failed:', responseText);
+        setMessage(responseText || 'Login failed.');
       }
     } catch (error) {
       console.error('Error logging in:', error);
@@ -83,6 +82,7 @@ const Login: React.FC = () => {
       <button type="submit" className="bg-cyan-400 text-white font-bold py-2 px-4 rounded mt-8">
         Login
       </button>
+      {message && <p className="text-red-500 mt-4">{message}</p>}
     </form>
   );
 };
