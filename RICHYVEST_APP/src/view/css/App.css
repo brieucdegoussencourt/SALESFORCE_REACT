@@ -22,7 +22,7 @@ body {
 }
 
 .App {
-  background-color: #1F2937;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

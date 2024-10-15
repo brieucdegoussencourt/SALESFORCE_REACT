@@ -8,7 +8,7 @@ const Title: React.FC = () => {
   return (
     <div>
       <p className="text-5xl text-cyan-400">RICHYVEST</p>
-      <p className="text-2xl text-cyan-400 mb-4">How rich could you be?</p>
+      <p className="text-2xl text-gray-600 mb-4">How rich could you be?</p>
     </div>
   );
 }

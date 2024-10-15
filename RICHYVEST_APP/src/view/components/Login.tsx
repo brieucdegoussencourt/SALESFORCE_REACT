@@ -61,7 +61,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col items-center mt-8">
+    <form onSubmit={handleSubmit} className="flex flex-col items-center mt-24">
       <h2 className="text-2xl mb-4">Login</h2>
       <input
         type="text"
