@@ -19,11 +19,11 @@ const Main: React.FC<MainProps> = ({ amount, date, result, handleAmountChange, h
             <br />
             <InputAmount className="border rounded h-7 p-1 mt-2 w-3/4" amount={parseFloat(amount)} handleChange={handleAmountChange} />
             <br />
-            on <InputDate className="border rounded h-7 p-1 mt-2 mb-2" date={date} handleChange={handleDateChange} />
+            on <InputDate className="border rounded h-7 p-1 mt-2 mb-1" date={date} handleChange={handleDateChange} />
             <br />
-            Today you would have
+            <div>Today you would have</div>
             <br />
-            <Result className="border bg-white rounded h-7 p-1 mt-2" result={result ?? 0} />
+            <Result className="border bg-white rounded h-7 p-1" result={result ?? 0} />
         </div>
         <Chart startDate={date} initialInvestment={parseFloat(amount)} finalValue={result} />
         <Button className="bg-cyan-400 text-white font-bold py-2 px-4 rounded mt-2" />

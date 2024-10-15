@@ -7,17 +7,17 @@ const NavBar: React.FC = () => {
   const { isAuthenticated, logout } = useContext(AuthContext);
 
   return (
-    <nav className="bg-gray-800 p-4 w-full z-50">
+    <nav className="bg-cyan-950 p-4 w-full z-50">
       <div className="container mx-auto flex justify-evenly">
-        <div className='flex items-center space-x-4'>
+        <div className='flex items-center space-x-4 '>
           <Link to="/">
             <img src="/Logo.png" alt="logo" width="30px" />
           </Link>
           <Link to="/" className="text-white">
-            Home
+           Home
           </Link>
         </div>
-        <div>
+        <div className='flex items-center space-x-4'>
           {isAuthenticated ? (
             <button onClick={logout} className="text-white">
               Logout
