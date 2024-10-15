@@ -7,7 +7,7 @@ const NavBar: React.FC = () => {
   const { isAuthenticated, logout } = useContext(AuthContext);
 
   return (
-    <nav className="bg-gray-800 p-4 fixed top-0 w-full z-50">
+    <nav className="bg-gray-800 p-4 w-full z-50">
       <div className="container mx-auto flex justify-evenly">
         <div className='flex items-center space-x-4'>
           <Link to="/">
