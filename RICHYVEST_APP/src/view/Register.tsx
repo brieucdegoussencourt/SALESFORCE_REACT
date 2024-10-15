@@ -57,7 +57,6 @@ const Register: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col items-center mt-24">
-      <h2 className="text-2xl text-gray-800 mb-4">Register</h2>
       <input
         type="text"
         name="login"
@@ -82,7 +81,7 @@ const Register: React.FC = () => {
         onChange={handleChange}
         className="mb-4 p-2 border"
       />
-      <button type="submit" className="bg-cyan-400 text-white font-bold py-2 px-4 rounded mt-8">
+      <button type="submit" className="bg-cyan-900 text-white font-medium py-1 px-6 mt-4 rounded hover:bg-cyan-600 transition-shadow shadow-md hover:shadow-lg">
         Register
       </button>
       {message && <p>{message}</p>}

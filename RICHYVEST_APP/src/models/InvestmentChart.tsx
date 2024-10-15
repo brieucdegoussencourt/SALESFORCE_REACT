@@ -85,7 +85,7 @@ const InvestmentChart: React.FC<InvestmentChartProps> = ({
 
   return (
     <div
-      style={{ backgroundColor: "white", padding: "1rem", borderRadius: "5px" }}
+      style={{ backgroundColor: "white", padding: "2rem", borderRadius: "0.5rem" }}
     >
       {chartData.labels && chartData.datasets ? (
         <Line data={chartData} options={options} />

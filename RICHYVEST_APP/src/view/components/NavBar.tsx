@@ -1,33 +1,40 @@
 // src/components/NavBar.tsx
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthContext';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const NavBar: React.FC = () => {
   const { isAuthenticated, logout } = useContext(AuthContext);
 
   return (
-    <nav className="bg-cyan-950 p-4 w-full z-50">
-      <div className="container mx-auto flex justify-evenly">
-        <div className='flex items-center space-x-4 '>
-          <Link to="/">
-            <img src="/Logo.png" alt="logo" width="30px" />
+    <nav className="border-b-4 bg-cyan-100 border-cyan-400 p-4 w-full z-50">
+      <div className="flex justify-center">
+        <div className="flex justify-between items-center px-2 max-w-lg w-full">
+          <Link
+            to="/"
+            className="bg-cyan-500 text-white font-light py-1 px-6 rounded hover:bg-cyan-600 transition-shadow shadow-md hover:shadow-lg"
+          >
+            Home
           </Link>
-          <Link to="/" className="text-white">
-           Home
-          </Link>
-        </div>
-        <div className='flex items-center space-x-4'>
           {isAuthenticated ? (
-            <button onClick={logout} className="text-white">
+            <button
+              onClick={logout}
+              className="bg-cyan-500 text-white font-light py-1 px-6 rounded hover:bg-cyan-600 transition-shadow shadow-md hover:shadow-lg"
+            >
               Logout
             </button>
           ) : (
             <>
-              <Link to="/login" className="text-white mr-4">
+              <Link
+                to="/login"
+                className="bg-cyan-500 text-white font-light py-1 px-6 rounded hover:bg-cyan-600 transition-shadow shadow-md hover:shadow-lg"
+              >
                 Login
               </Link>
-              <Link to="/register" className="text-white">
+              <Link
+                to="/register"
+                className="bg-cyan-500 text-white font-light py-1 px-6 rounded hover:bg-cyan-600 transition-shadow shadow-md hover:shadow-lg"
+              >
                 Register
               </Link>
             </>
