@@ -36,31 +36,33 @@ const Login: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col items-center mt-24">
-      <input
-        type="text"
-        name="login"
-        placeholder="Login"
-        value={loginData.login}
-        onChange={handleChange}
-        className="mb-2 p-2 border rounded"
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        value={loginData.password}
-        onChange={handleChange}
-        className="mb-4 p-2 border rounded"
-      />
-      <button
-        type="submit"
-        className="bg-cyan-900 text-white font-medium py-1 px-6 mt-4 rounded hover:bg-cyan-400 transition-shadow shadow-md hover:shadow-lg"
-      >
-        Login
-      </button>
-      {message && <p className="text-red-500 mt-4">{message}</p>}
-    </form>
+    <div className="flex items-center justify-center p-24">
+      <form onSubmit={handleSubmit} className="flex flex-col items-center w-max rounded">
+        <input
+          type="text"
+          name="login"
+          placeholder="Login"
+          value={loginData.login}
+          onChange={handleChange}
+          className="mb-2 p-2 border rounded"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={loginData.password}
+          onChange={handleChange}
+          className="mb-4 p-2 border rounded"
+        />
+        <button
+          type="submit"
+          className="border bg-cyan-200 text-cyan-900 font-medium py-1 px-6 mt-4 rounded hover:bg-cyan-400 hover:text-white hover:shadow-lg"
+        >
+          Login
+        </button>
+        {message && <p className="text-red-500 mt-4">{message}</p>}
+      </form>
+    </div>
   );
 };
 

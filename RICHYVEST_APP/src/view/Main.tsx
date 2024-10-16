@@ -18,12 +18,12 @@ const Main: React.FC<MainProps> = ({ amount, date, result, handleAmountChange, h
     };
 
     return (
-        <div className="flex flex-col items-center justify-center p-8 bg-gray-100">
+        <div className="flex flex-col items-center justify-center p-8">
             <div className="mb-8">
                 <Title />
             </div>
             <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 mb-6">
-                <div className="border rounded-lg p-4 bg-bg_cyan_light max-w-md md:w-1/3">
+                <div className="rounded-lg p-4 bg-cyan-100 max-w-md md:w-1/3">
                     <label className="text-base font-light">If you had invested</label>
                     <div className="flex items-center mt-2">
                         <InputAmount 
@@ -52,7 +52,7 @@ const Main: React.FC<MainProps> = ({ amount, date, result, handleAmountChange, h
                     <Chart startDate={date} initialInvestment={parseFloat(amount)} finalValue={result} />
                 </div>
             </div>
-            <Button className="bg-cyan-900 text-white font-medium py-1 px-6 mt-4 rounded hover:bg-cyan-400 transition-shadow shadow-md hover:shadow-lg"
+            <Button className="bg-cyan-900 text-white font-medium py-1 px-6 mt-4 rounded hover:bg-cyan-400"
             onClick={handleButtonClick}>
                 Invest Now
             </Button>

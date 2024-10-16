@@ -7,19 +7,19 @@ const NavBar: React.FC = () => {
   const { isAuthenticated, logout } = useContext(AuthContext);
 
   return (
-    <nav className="bg-cyan-900 border-cyan-400 p-4 w-full z-50">
+    <nav className="bg-cyan-900 p-3 w-full z-50">
       <div className="flex justify-center">
         <div className="flex justify-between items-center px-2 max-w-lg w-full">
           <Link
             to={isAuthenticated ? "/app" : "/"}
-            className="bg-cyan-900 text-white font-light py-1 px-5 rounded hover:bg-cyan-400 transition-shadow shadow-md hover:shadow-lg"
+            className="text-white text-sm font-light py-1 px-5 rounded hover:bg-cyan-400 hover:text-cyan-900"
           >
             HOME
           </Link>
           {isAuthenticated ? (
             <button
               onClick={logout}
-              className="bg-cyan-900 text-white font-light py-1 px-5 rounded hover:bg-cyan-400 transition-shadow shadow-md hover:shadow-lg"
+              className="text-white text-sm font-light py-1 px-5 rounded hover:bg-cyan-400 hover:text-cyan-900"
             >
               LOGOUT
             </button>
@@ -27,13 +27,13 @@ const NavBar: React.FC = () => {
             <>
               <Link
                 to="/login"
-                className="bg-cyan-900 text-white font-light py-1 px-5 rounded hover:bg-cyan-400 transition-shadow shadow-md hover:shadow-lg"
+                className="text-white text-sm font-light py-1 px-5 rounded hover:bg-cyan-400 hover:text-cyan-900"
               >
                 LOGIN
               </Link>
               <Link
                 to="/register"
-                className="bg-cyan-900 text-white font-light py-1 px-5 rounded hover:bg-cyan-400 transition-shadow shadow-md hover:shadow-lg"
+                className="text-white text-sm font-light py-1 px-5 rounded hover:bg-cyan-400 hover:text-cyan-900"
               >
                 REGISTER
               </Link>
