@@ -62,26 +62,19 @@ function Result({ result, className }: { result: number; className?: string }) {
 interface ButtonProps {
   className?: string;
   children?: React.ReactNode;
+  onClick?: () => void;
 }
 
-
-
-const Button: React.FC<ButtonProps> = ({ className, children }) => {
+const Button: React.FC<ButtonProps> = ({ className, children, onClick }) => {
   const handleClick = () => {
     window.location.href = "https://www.easyvest.be";
   };
 
   return (
-    
-
-      <button className={className}>
-
-          {children}
-
-      </button>
-
+    <button className={className} onClick={onClick}>
+      {children}
+    </button>
   );
-
 };
 
 export { InputAmount, InputDate, Result, Button };

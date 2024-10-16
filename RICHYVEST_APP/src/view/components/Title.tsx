@@ -7,8 +7,8 @@ import React from 'react';
 const Title: React.FC = () => {
   return (
     <div>
-      <p className="text-5xl text-cyan-500">RICHYVEST</p>
-      <p className="text-2xl text-gray-600 mb-4">How rich could you be?</p>
+      <p className="text-5xl text-cyan-900">RICHYVEST</p>
+      <p className="text-2xl text-gray-700">How rich could you be?</p>
     </div>
   );
 }

@@ -2,11 +2,11 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
-
+import { LoginData, loginUser } from '../models/useLogin';
 
 const Login: React.FC = () => {
   const [message, setMessage] = useState<string | null>(null);
-  const [loginData, setLoginData] = useState({ login: '', password: '' });
+  const [loginData, setLoginData] = useState<LoginData>({ login: '', password: '' });
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -17,35 +17,10 @@ const Login: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('handleSubmit called');
-  
-    const payload = {
-      action: 'login',
-      login: loginData.login,
-      password: loginData.password,
-    };
-    console.log('Payload:', payload);
-  
+
     try {
-      const response = await fetch('https://easyvest-dev-ed.develop.my.salesforce-sites.com/services/apexrest/api/public/User', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-      console.log('Fetch response received');
-  
-      let responseText = await response.text();
-      console.log('API Response:', responseText);
-  
-      // Clean the response text
-      responseText = responseText.trim();
-      if (responseText.startsWith('"') && responseText.endsWith('"')) {
-        responseText = responseText.substring(1, responseText.length - 1);
-      }
-      console.log('Cleaned API Response:', responseText);
-  
-      // Determine success or failure based on response text
+      const responseText = await loginUser(loginData);
+
       if (responseText.startsWith('Success')) {
         console.log('Login successful, calling login() and navigating to /app');
         login(); // From AuthContext
@@ -54,9 +29,9 @@ const Login: React.FC = () => {
         console.log('Login failed:', responseText);
         setMessage(responseText || 'Login failed.');
       }
-    } catch (error) {
-      console.error('Error logging in:', error);
-      setMessage('Error logging in.');
+    } catch (error: any) {
+      console.error('Error during login:', error);
+      setMessage(error.message || 'Error logging in.');
     }
   };
 
@@ -68,7 +43,7 @@ const Login: React.FC = () => {
         placeholder="Login"
         value={loginData.login}
         onChange={handleChange}
-        className="mb-2 p-2 border"
+        className="mb-2 p-2 border rounded"
       />
       <input
         type="password"
@@ -76,9 +51,12 @@ const Login: React.FC = () => {
         placeholder="Password"
         value={loginData.password}
         onChange={handleChange}
-        className="mb-4 p-2 border"
+        className="mb-4 p-2 border rounded"
       />
-      <button type="submit" className="bg-cyan-900 text-white font-medium py-1 px-6 mt-4 rounded hover:bg-cyan-600 transition-shadow shadow-md hover:shadow-lg">
+      <button
+        type="submit"
+        className="bg-cyan-900 text-white font-medium py-1 px-6 mt-4 rounded hover:bg-cyan-400 transition-shadow shadow-md hover:shadow-lg"
+      >
         Login
       </button>
       {message && <p className="text-red-500 mt-4">{message}</p>}

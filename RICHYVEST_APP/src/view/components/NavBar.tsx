@@ -7,35 +7,35 @@ const NavBar: React.FC = () => {
   const { isAuthenticated, logout } = useContext(AuthContext);
 
   return (
-    <nav className="border-b-4 bg-cyan-100 border-cyan-400 p-4 w-full z-50">
+    <nav className="bg-cyan-900 border-cyan-400 p-4 w-full z-50">
       <div className="flex justify-center">
         <div className="flex justify-between items-center px-2 max-w-lg w-full">
           <Link
-            to="/"
-            className="bg-cyan-500 text-white font-light py-1 px-6 rounded hover:bg-cyan-600 transition-shadow shadow-md hover:shadow-lg"
+            to={isAuthenticated ? "/app" : "/"}
+            className="bg-cyan-900 text-white font-light py-1 px-5 rounded hover:bg-cyan-400 transition-shadow shadow-md hover:shadow-lg"
           >
-            Home
+            HOME
           </Link>
           {isAuthenticated ? (
             <button
               onClick={logout}
-              className="bg-cyan-500 text-white font-light py-1 px-6 rounded hover:bg-cyan-600 transition-shadow shadow-md hover:shadow-lg"
+              className="bg-cyan-900 text-white font-light py-1 px-5 rounded hover:bg-cyan-400 transition-shadow shadow-md hover:shadow-lg"
             >
-              Logout
+              LOGOUT
             </button>
           ) : (
             <>
               <Link
                 to="/login"
-                className="bg-cyan-500 text-white font-light py-1 px-6 rounded hover:bg-cyan-600 transition-shadow shadow-md hover:shadow-lg"
+                className="bg-cyan-900 text-white font-light py-1 px-5 rounded hover:bg-cyan-400 transition-shadow shadow-md hover:shadow-lg"
               >
-                Login
+                LOGIN
               </Link>
               <Link
                 to="/register"
-                className="bg-cyan-500 text-white font-light py-1 px-6 rounded hover:bg-cyan-600 transition-shadow shadow-md hover:shadow-lg"
+                className="bg-cyan-900 text-white font-light py-1 px-5 rounded hover:bg-cyan-400 transition-shadow shadow-md hover:shadow-lg"
               >
-                Register
+                REGISTER
               </Link>
             </>
           )}

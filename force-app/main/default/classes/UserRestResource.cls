@@ -1,6 +1,8 @@
 @RestResource(urlMapping='/api/public/User/*')
 global without sharing class UserRestResource {
 
+    // Handle HTTP POST request
+
     @HttpPost
     global static String handleRequest() {
         RestRequest req = RestContext.request;
@@ -15,6 +17,8 @@ global without sharing class UserRestResource {
             return 'Error: Request body is empty.';
         }
 
+        // Extract parameters from the request body
+
         Map<String, Object> params;
 
         try {
@@ -26,11 +30,15 @@ global without sharing class UserRestResource {
 
         System.debug('Parsed Parameters: ' + params);
 
+        //Validate the Action Parameter:
+
         String action = (String) params.get('action');
         if (String.isBlank(action)) {
             res.statusCode = 400;
             return 'Error: Action parameter is required.';
         }
+
+        // Handling Register & Login actions
 
         if (action == 'register') {
             String login = (String) params.get('login');

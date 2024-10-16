@@ -1,9 +1,6 @@
 // src/view/components/Chart.tsx
 import React, {useState} from 'react';
 import InvestmentChart from '../../models/InvestmentChart';
-import { stockData, availableDates } from '../../models/RealStockData';
-import { InputAmount, InputDate, Result, Button } from '../../models/Inputs';
-import { useGuessModel } from '../../models/model';
 
 interface ChartProps {
     startDate: string;
@@ -14,7 +11,7 @@ interface ChartProps {
 const Chart: React.FC<ChartProps> = ({ startDate, initialInvestment, finalValue }) => {
 
     return (
-        <div>
+        <div className='bg-white p-3 rounded-lg' >
             <InvestmentChart 
                 startDate={startDate} 
                 initialInvestment={initialInvestment} 
