@@ -8,7 +8,7 @@ const Title: React.FC = () => {
   return (
     <div className='flex flex-col items-center'>
       <p className="text-5xl text-cyan-900">RICHYVEST</p>
-      <p className="text-2xl text-cyan-400 mt-3">How rich could you be?</p>
+      <p className="text-2xl text-cyan-400 mt-3 tracking-wide">How rich could you be?</p>
     </div>
   );
 }

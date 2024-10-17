@@ -11,7 +11,7 @@ interface ChartProps {
 const Chart: React.FC<ChartProps> = ({ startDate, initialInvestment, finalValue }) => {
 
     return (
-        <div className='bg-white p-3 rounded-lg' >
+        <div className='bg-white p-2 rounded-lg' >
             <InvestmentChart 
                 startDate={startDate} 
                 initialInvestment={initialInvestment} 
