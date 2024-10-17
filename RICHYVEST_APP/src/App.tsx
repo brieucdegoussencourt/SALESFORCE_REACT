@@ -15,23 +15,23 @@ function App() {
       <Router>
         <div className="flex flex-col min-h-screen">
           <NavBar />
-          <main className="flex-grow">
-            <Routes>
-              {/* Public Routes */}
-              <Route path="/" element={<Welcome />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              {/* Protected Route */}
-              <Route
-                path="/app"
-                element={
-                  <ProtectedRoute>
-                    <Guess />
-                  </ProtectedRoute>
-                }
-              />
-            </Routes>
-          </main>
+            <div className="flex-grow flex items-center justify-center">
+              <Routes>
+                {/* Public Routes */}
+                <Route path="/" element={<Welcome />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                {/* Protected Route */}
+                <Route
+                  path="/app"
+                  element={
+                    <ProtectedRoute>
+                      <Guess />
+                    </ProtectedRoute>
+                  }
+                />
+              </Routes>
+            </div>
           <Footer />
         </div>
       </Router>

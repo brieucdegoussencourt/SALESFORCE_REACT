@@ -1,28 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import {
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaGithub,
-  FaLinkedin
-} from "react-icons/fa";
+import React from 'react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-cyan-100 p-3 w-full z-50 mt-auto">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
-        <div className="flex space-x-4 mt-4 md:mt-0">
-          <p className="text-sm">
-            &copy; {new Date().getFullYear()} Brieuc de Goussencourt
-          </p>
-          <a href="https://instagram.com" className="hover:text-gray-400">
-            <FaGithub />
-          </a>
-          <a href="https://linkedin.com" className="hover:text-gray-400">
-            <FaLinkedin />
-          </a>
-        </div>
+    <footer className="bg-cyan-100 p-2 w-full z-50 mt-auto">
+      <div className="container mx-auto flex items-center justify-center px-4">
+        <p className="text-sm font-light mr-4">
+          &copy; {new Date().getFullYear()} Richyvest. All rights reserved.
+        </p>
+        <a href="https://github.com" className="hover:text-cyan-400 mx-2" target='/blank'>
+          <FaGithub />
+        </a>
+        <a href="https://linkedin.com" className="hover:text-cyan-400 mx-2" target='/blank'>
+          <FaLinkedin />
+        </a>
       </div>
     </footer>
   );

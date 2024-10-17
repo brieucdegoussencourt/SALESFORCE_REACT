@@ -23,7 +23,7 @@ const Login: React.FC = () => {
 
       if (responseText.startsWith('Success')) {
         console.log('Login successful, calling login() and navigating to /app');
-        login(); // From AuthContext
+        login();
         navigate('/app');
       } else {
         console.log('Login failed:', responseText);
@@ -36,7 +36,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center p-24">
+    <div className="flex items-center justify-center mb-24">
       <form onSubmit={handleSubmit} className="flex flex-col items-center w-max rounded">
         <input
           type="text"
