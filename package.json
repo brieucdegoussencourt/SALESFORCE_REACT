@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "Salesforce App",
+  "homepage": "",
   "scripts": {
     "lint": "eslint **/{aura,lwc}/**/*.js",
     "test": "npm run test:unit",

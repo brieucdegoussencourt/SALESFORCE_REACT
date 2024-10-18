@@ -1,0 +1,18 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "005Qy000007mSZ4IAM",
+      "createdByName": "Charles de Brabandere",
+      "createdDate": "2024-09-24T14:22:55.000Z",
+      "fileName": "staticresources/SiteSamples.resource",
+      "fullName": "SiteSamples",
+      "id": "081Qy000005FzczIAC",
+      "lastModifiedById": "005Qy000007mSZ4IAM",
+      "lastModifiedByName": "Charles de Brabandere",
+      "lastModifiedDate": "2024-09-24T14:22:55.000Z",
+      "manageableState": "unmanaged",
+      "type": "StaticResource"
+    }
+  ]
+}
