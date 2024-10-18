@@ -23,36 +23,37 @@ const Main: React.FC<MainProps> = ({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-12">
+    <div className="flex flex-col items-center justify-center p-9 space-y-9">
       <Title />
       <div className="flex flex-col md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-4 mb-6">
-        <div className="rounded-lg p-4 bg-cyan-100 max-w-md md:w-1/3">
-          <label className="text-md font-semibold mb-2">
+        <div className="rounded p-3 bg-cyan-700 max-w-md md:w-1/3">
+          <label className="text-md text-white font-medium mb-2">
             If you had invested
           </label>
           <div className="flex flex-col items-start mt-2">
             <InputAmount
-              className="border rounded-lg px-4 py-1 w-full text-lg"
+              className="border rounded px-4 py-1 w-full text-lg"
               amount={parseFloat(amount)}
               handleChange={handleAmountChange}
             />
           </div>
+          
           <div className="flex flex-col mt-4">
             <InputDate
-              className="border rounded-lg h-9 px-4 w-full text-lg"
+              className="border rounded h-9 px-4 w-full text-lg"
               date={date}
               handleChange={handleDateChange}
             />
-            <small className="text-gray-600 mt-1 text-center">
+            <small className="text-white text-sm mt-1 text-center">
               Choose an investment date
             </small>
           </div>
-          <label className="text-md font-semibold mt-4 block">
+          <label className="text-md text-white font-medium mt-4 block">
             Today you would be rich!
           </label>
           <div className="flex items-center mt-2">
             <Result
-              className="border bg-white rounded-lg h-10 px-4 w-full flex items-center text-lg"
+              className="border bg-white rounded h-10 px-4 w-full flex items-center text-lg"
               result={result ?? 0}
             />
           </div>
@@ -66,7 +67,7 @@ const Main: React.FC<MainProps> = ({
         </div>
       </div>
       <Button
-        className="bg-cyan-400 text-xl text-white font-medium py-2 px-6 rounded hover:bg-cyan-900"
+        className="bg-cyan-500 text-xl text-white font-bold py-3 px-8 rounded hover:from-cyan-900 hover:bg-cyan-900 hover:text-cyan-400 shadow-lg"
         onClick={handleButtonClick}
       >
         Invest Now
