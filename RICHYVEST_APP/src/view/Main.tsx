@@ -37,7 +37,7 @@ const Main: React.FC<MainProps> = ({
               handleChange={handleAmountChange}
             />
           </div>
-          
+
           <div className="flex flex-col mt-4">
             <InputDate
               className="border rounded h-9 px-4 w-full text-lg"
@@ -66,12 +66,14 @@ const Main: React.FC<MainProps> = ({
           />
         </div>
       </div>
-      <Button
-        className="bg-cyan-500 text-white text-xl text-cyan-900 font-bold py-3 px-8 rounded hover:from-cyan-900 hover:bg-cyan-900 hover:text-cyan-400 shadow-lg"
-        onClick={handleButtonClick}
-      >
-        Invest Now
-      </Button>
+
+        <Button
+          className="bg-cyan-500 text-white text-xl text-cyan-900 font-medium py-3 px-8 rounded hover:from-cyan-900 hover:bg-cyan-900 hover:text-cyan-400 shadow-lg"
+          onClick={handleButtonClick}
+        >
+          Invest Now
+        </Button>
+
     </div>
   );
 };
