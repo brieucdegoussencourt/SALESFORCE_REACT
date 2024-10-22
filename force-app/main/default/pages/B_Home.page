@@ -1,5 +1,5 @@
 <apex:page applyBodyTag="false" applyHtmlTag="false" sidebar="false" showHeader="false" lightningStylesheets="false" >
-  <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.SiteSamples,'main.4bdebf77.css')}" />
+  <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.SiteSamples,'main.01809456.css')}" />
   <div id="root"></div>
-  <script type="text/javascript" src="{!URLFOR($Resource.SiteSamples,'main.33fd0b89.js')}"></script>
+  <script type="text/javascript" src="{!URLFOR($Resource.SiteSamples,'main.b3c395ce.js')}"></script>
 </apex:page>

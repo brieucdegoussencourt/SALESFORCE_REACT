@@ -7,40 +7,30 @@ const NavBar: React.FC = () => {
   const { isAuthenticated, logout } = useContext(AuthContext);
 
   return (
-    <nav className="bg-cyan-700 p-2 w-full z-50">
-      <div className="flex justify-center">
-        <div className="flex justify-between items-center px-2 max-w-lg w-full">
-          <Link
-            to={isAuthenticated ? "/app" : "/"}
-            className="text-white text-sm font-light py-1 px-5 rounded hover:text-cyan-400"
-          >
+    <nav className="bg-cyan-100 p-4 w-full z-50">
+        <div className="flex justify-center items-center space-x-14">
+        <Link to="/" className="text-cyan-900 font-light hover:text-cyan-400">
             HOME
           </Link>
           {isAuthenticated ? (
-            <button
+            <Link
+              to="/login"
               onClick={logout}
-              className="text-white text-sm font-light py-1 px-5 rounded hover:text-cyan-400"
+              className="text-cyan-900 font-light hover:text-cyan-400"
             >
               LOGOUT
-            </button>
+            </Link>
           ) : (
             <>
-              <Link
-                to="/login"
-                className="text-white text-sm font-light py-1 px-5 rounded hover:text-cyan-400"
-              >
+              <Link to="/login" className="text-cyan-900 font-light hover:text-cyan-400">
                 LOGIN
               </Link>
-              <Link
-                to="/register"
-                className="text-white text-sm font-light py-1 px-5 rounded hover:text-cyan-400"
-              >
+              <Link to="/register" className="text-cyan-900 font-light hover:text-cyan-400">
                 REGISTER
               </Link>
             </>
           )}
         </div>
-      </div>
     </nav>
   );
 };
