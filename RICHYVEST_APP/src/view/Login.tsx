@@ -1,12 +1,15 @@
 // src/components/Login.tsx
-import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../contexts/AuthContext';
-import { LoginData, loginUser } from '../models/useLogin';
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
+import { LoginData, loginUser } from "../models/useLogin";
 
 const Login: React.FC = () => {
   const [message, setMessage] = useState<string | null>(null);
-  const [loginData, setLoginData] = useState<LoginData>({ login: '', password: '' });
+  const [loginData, setLoginData] = useState<LoginData>({
+    login: "",
+    password: ""
+  });
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -16,28 +19,31 @@ const Login: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('handleSubmit called');
+    console.log("handleSubmit called");
 
     try {
       const responseText = await loginUser(loginData);
 
-      if (responseText.startsWith('Success')) {
-        console.log('Login successful, calling login() and navigating to /app');
+      if (responseText.startsWith("Success")) {
+        console.log("Login successful, calling login() and navigating to /app");
         login();
-        navigate('/app');
+        navigate("/app");
       } else {
-        console.log('Login failed:', responseText);
-        setMessage(responseText || 'Login failed.');
+        console.log("Login failed:", responseText);
+        setMessage(responseText || "Login failed.");
       }
     } catch (error: any) {
-      console.error('Error during login:', error);
-      setMessage(error.message || 'Error logging in.');
+      console.error("Error during login:", error);
+      setMessage(error.message || "Error logging in.");
     }
   };
 
   return (
     <div className="flex items-center justify-center mb-24">
-      <form onSubmit={handleSubmit} className="flex flex-col items-center w-max rounded">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col items-center w-max rounded"
+      >
         <input
           type="text"
           name="login"
@@ -54,12 +60,9 @@ const Login: React.FC = () => {
           onChange={handleChange}
           className="mb-4 p-2 border rounded"
         />
-        <button
-          type="submit"
-          className="bg-cyan-400 text-cyan-900 text-lg font-medium py-1 px-6 mt-4 rounded hover:text-white"
-        >
-          Login
-        </button>
+        <div className="bg-cyan-400 text-white text-lg font-medium py-1 px-6 mt-4 rounded hover:text-cyan-900">
+          <button type="submit">Login</button>
+        </div>
         {message && <p className="text-red-500 mt-4">{message}</p>}
       </form>
     </div>

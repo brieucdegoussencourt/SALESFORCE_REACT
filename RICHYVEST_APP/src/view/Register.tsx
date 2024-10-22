@@ -31,13 +31,10 @@ const Register: React.FC = () => {
         onChange={handleChange}
         className="mb-4 p-2 border rounded"
       />
-      <button
-        type="submit"
-        className="bg-cyan-400 text-cyan-900 text-lg font-medium py-1 px-6 mt-4 rounded hover:text-white"
-      >
-        Register
-      </button>
-      {message && <p>{message}</p>}
+        <div className="bg-cyan-400 text-white text-lg font-medium py-1 px-6 mt-4 rounded hover:text-cyan-900">
+          <button type="submit">Register</button>
+        </div>
+        {message && <p className="text-red-500 mt-4">{message}</p>}
     </form>
   );
 };

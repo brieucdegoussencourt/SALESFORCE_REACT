@@ -65,6 +65,7 @@ const InvestmentChart: React.FC<InvestmentChartProps> = ({
   }, [startDate, initialInvestment]);
 
   const options: ChartOptions<"line"> = {
+    aspectRatio: 1.5,
     scales: {
       x: {
         type: "time",
