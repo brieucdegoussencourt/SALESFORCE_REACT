@@ -6,7 +6,7 @@ const Register: React.FC = () => {
   const { registerData, message, handleChange, handleSubmit } = useRegister();
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col items-center mb-24">
+    <form onSubmit={handleSubmit} className="flex flex-col items-center h-full mb-24">
       <input
         type="text"
         name="login"

@@ -39,7 +39,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center mb-24">
+    <div className="flex items-center justify-center h-full mb-24">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center w-max rounded"
