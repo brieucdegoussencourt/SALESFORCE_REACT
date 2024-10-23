@@ -9,7 +9,8 @@ import {
   PointElement,
   LinearScale,
   Title,
-  Legend
+  Legend,
+  Tooltip
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import React, { useState, useEffect } from "react";
@@ -23,7 +24,8 @@ Chart.register(
   PointElement,
   LinearScale,
   Title,
-  Legend
+  Legend,
+  Tooltip
 );
 
 interface InvestmentChartProps {
@@ -34,7 +36,8 @@ interface InvestmentChartProps {
 
 const InvestmentChart: React.FC<InvestmentChartProps> = ({
   startDate,
-  initialInvestment
+  initialInvestment,
+  
 }) => {
   const [chartData, setChartData] = useState<any>({});
 
@@ -83,7 +86,7 @@ const InvestmentChart: React.FC<InvestmentChartProps> = ({
       },
       y: {
         beginAtZero: true,
-        min: initialInvestment
+        min: initialInvestment,
       }
     },
     plugins: {
@@ -96,7 +99,16 @@ const InvestmentChart: React.FC<InvestmentChartProps> = ({
           }
         }
       },
-    },
+      tooltip: {
+        enabled: true,
+        callbacks: {
+          label: function (context) {
+            return `Value: ${(context.raw as number).toFixed(2)} EUR`; // Customize the tooltip label
+          }
+        }
+      }
+    }
+
   };
 
   return (
