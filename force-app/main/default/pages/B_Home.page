@@ -7,12 +7,12 @@
     <title>Richyvest</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.SiteSamples,'main.46176bf0.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.SiteSamples,'main.078d2cea.css')}" />
   </head>
 
   <body>
     <div id="root"></div>
-    <script type="text/javascript" src="{!URLFOR($Resource.SiteSamples,'main.4815edc3.js')}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.SiteSamples,'main.10507eab.js')}"></script>
   </body>
 
   </html>
