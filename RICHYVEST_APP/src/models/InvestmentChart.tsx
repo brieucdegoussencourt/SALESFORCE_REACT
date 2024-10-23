@@ -8,7 +8,8 @@ import {
   LineElement,
   PointElement,
   LinearScale,
-  Title
+  Title,
+  Legend
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import React, { useState, useEffect } from "react";
@@ -21,7 +22,8 @@ Chart.register(
   LineElement,
   PointElement,
   LinearScale,
-  Title
+  Title,
+  Legend
 );
 
 interface InvestmentChartProps {
@@ -54,15 +56,17 @@ const InvestmentChart: React.FC<InvestmentChartProps> = ({
         {
           label: "Investment Value Over Time",
           data: investmentValues,
-          borderColor: "rgba(75, 192, 192, 1)",
-          backgroundColor: "rgba(75, 192, 192, 0.2)",
-          fill: true
+          borderColor: "rgba(54, 162, 162, 1)",
+          backgroundColor: "rgba(54, 162, 162, 0.4)",
+          fill: true,
         }
       ]
     };
 
     setChartData(newChartData);
   }, [startDate, initialInvestment]);
+
+  
 
   const options: ChartOptions<"line"> = {
     aspectRatio: 1.5,
@@ -81,7 +85,18 @@ const InvestmentChart: React.FC<InvestmentChartProps> = ({
         beginAtZero: true,
         min: initialInvestment
       }
-    }
+    },
+    plugins: {
+      legend: {
+        display: false,
+        position: 'top',
+        labels: {
+          font: {
+            size: 12
+          }
+        }
+      },
+    },
   };
 
   return (

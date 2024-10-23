@@ -13,7 +13,7 @@ const Register: React.FC = () => {
         placeholder="Login"
         value={registerData.login}
         onChange={handleChange}
-        className="mb-2 p-2 border rounded"
+        className="mb-2 bg-white p-2 rounded"
       />
       <input
         type="email"
@@ -21,7 +21,7 @@ const Register: React.FC = () => {
         placeholder="Email"
         value={registerData.email}
         onChange={handleChange}
-        className="mb-2 p-2 border rounded"
+        className="mb-2 p-2 bg-white rounded"
       />
       <input
         type="password"
@@ -29,7 +29,7 @@ const Register: React.FC = () => {
         placeholder="Password"
         value={registerData.password}
         onChange={handleChange}
-        className="mb-4 p-2 border rounded"
+        className="mb-4 p-2 bg-white rounded"
       />
         <div className="bg-cyan-400 text-white text-lg font-medium py-1 px-6 mt-4 rounded hover:text-cyan-900">
           <button type="submit">Register</button>

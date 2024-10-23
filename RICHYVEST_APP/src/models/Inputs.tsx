@@ -54,7 +54,7 @@ function Result({ result, className }: { result: number; className?: string }) {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
       })}{" "}
-      euros
+      <p className="ml-2">€</p>
     </span>
   );
 }

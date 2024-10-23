@@ -6,11 +6,11 @@ const NavBar: React.FC = () => {
   const { isAuthenticated, logout } = useContext(AuthContext);
 
   return (
-    <nav className="bg-cyan-100 p-3 w-full">
+    <nav className="bg-gradient-to-r from-cyan-100 to-cyan-200 p-3 w-full">
       <div className="max-w-3xl mx-auto w-full flex justify-center">
         <div className=" flex justify-around items-center w-full">
           <Link to="/" className="text-cyan-900 font-thin hover:text-cyan-400">
-            HOME
+            Home
           </Link>
           {isAuthenticated ? (
             <Link
@@ -18,7 +18,7 @@ const NavBar: React.FC = () => {
               onClick={logout}
               className="text-cyan-900 font-thin hover:text-cyan-400"
             >
-              LOGOUT
+              Logout
             </Link>
           ) : (
             <>
@@ -26,13 +26,13 @@ const NavBar: React.FC = () => {
                 to="/login"
                 className="text-cyan-900 font-thin hover:text-cyan-400"
               >
-                LOGIN
+                Login
               </Link>
               <Link
                 to="/register"
                 className="text-cyan-900 font-thin hover:text-cyan-400"
               >
-                REGISTER
+                Register
               </Link>
             </>
           )}

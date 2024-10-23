@@ -1,14 +1,19 @@
 <apex:page standardStylesheets="false" applyHtmlTag="false" sidebar="false" showHeader="false" lightningStylesheets="false">
-  <html>
+  <html lang="en">
+
   <head>
-    <title>Site Samples</title>
+    <meta name="description" content="a simple app to calculate how rich you would be if you had invested in the stock market years ago"
+    />
+    <title>Richyvest</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.SiteSamples,'main.46176bf0.css')}" />
   </head>
+
   <body>
     <div id="root"></div>
     <script type="text/javascript" src="{!URLFOR($Resource.SiteSamples,'main.4815edc3.js')}"></script>
   </body>
+
   </html>
 </apex:page>

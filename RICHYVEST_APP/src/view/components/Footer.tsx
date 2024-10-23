@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-cyan-100 p-4 w-full z-50 mt-auto">
+    <footer className="bg-gradient-to-r from-cyan-100 to-cyan-200 p-4 w-full z-50 mt-auto">
       <div className="container mx-auto flex items-center justify-center">
         <p className="text-sm text-cyan-900 font-light mr-2">
           &copy; 2024 Richyvest. All rights reserved.

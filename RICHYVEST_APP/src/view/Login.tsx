@@ -50,7 +50,7 @@ const Login: React.FC = () => {
           placeholder="Login"
           value={loginData.login}
           onChange={handleChange}
-          className="mb-2 p-2 border rounded"
+          className="mb-2 p-2 bg-white rounded"
         />
         <input
           type="password"
@@ -58,7 +58,7 @@ const Login: React.FC = () => {
           placeholder="Password"
           value={loginData.password}
           onChange={handleChange}
-          className="mb-4 p-2 border rounded"
+          className="mb-4 p-2 bgwhite rounded"
         />
         <div className="bg-cyan-400 text-white text-lg font-medium py-1 px-6 mt-4 rounded hover:text-cyan-900">
           <button type="submit">Login</button>
