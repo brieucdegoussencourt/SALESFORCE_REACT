@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# 🌟 Richyvest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Author:** Brieuc de Goussencourt  
+**Date:** October 2024  
+**Status:** 🟢 _Completed_  
+**Deployed Site:** [Richyvest](https://easyvest-dev-ed.develop.my.salesforce-sites.com/B_Home#/login)
 
-## Available Scripts
+## 📖 About Richyvest
 
-In the project directory, you can run:
+Richyvest is a simple yet powerful investment application designed to estimate returns on investments made in ETFs following the MSCI World Index. This project represents a personal milestone, as it marks the completion of my training as a **Junior Web Developer** at [beCode](https://becode.org). The project was built over three weeks in October 2024 as part of my preparation for an internship at [Easyvest](https://easyvest.be). I am proud to say that I had not worked on the techs used before starting the project and was able to quickly apprehend them in order to complete the project.
 
-### `npm start`
+## 🚀 Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 🖥️ **Frontend**: React, React Router, TypeScript, TailwindCSS  
+- 🔗 **Backend**: Salesforce (Apex, Visualforce)  
+- 🌐 **Deployment**: Salesforce Page
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This stack allows for building modern, responsive web applications with robust backend integration using Salesforce.
 
-### `npm test`
+## 🏆 Project Goals
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The main purpose of this project was to:
 
-### `npm run build`
+- 🧠 Get familiar with the tech stack used at **Easyvest**
+- 📈 Build a functional app that estimates returns based on the **MSCI World Index**
+- 🏅 Achieve hands-on experience integrating **Salesforce** as the backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📸 Screenshots
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Here are some screenshots of Richyvest in action:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. ![Screenshot 1](/screenshots/screenshot1.png)
+2. ![Screenshot 2](/screenshots/screenshot2.png)
+3. ![Screenshot 3](/screenshots/screenshot3.png)
+4. ![Screenshot 4](/screenshots/screenshot4.png)
+4. ![Screenshot 5](/screenshots/screenshot5.png)
+4. ![Screenshot 6](/screenshots/screenshot.png)
 
-### `npm run eject`
+## 🎓 My Journey at beCode
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+beCode works with **learn-by-doing methodologies**, **active pedagogy**, and promotes values like **inclusion** and **collaboration**. Completing Richyvest has been an incredible experience, consolidating everything I’ve learned in the past months.
