@@ -34,8 +34,7 @@ Here are some screenshots of Richyvest in action:
 2. ![Screenshot 2](/screenshots/screenshot2.png)
 3. ![Screenshot 3](/screenshots/screenshot3.png)
 4. ![Screenshot 4](/screenshots/screenshot4.png)
-4. ![Screenshot 5](/screenshots/screenshot5.png)
-4. ![Screenshot 6](/screenshots/screenshot.png)
+5. ![Screenshot 5](/screenshots/screenshot5.png)
 
 ## 🎓 My Journey at beCode
 
