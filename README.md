@@ -1,13 +1,14 @@
 # 🌟 Richyvest
 
 **Author:** Brieuc de Goussencourt  
-**Date:** October 2024  
+**Date:** October 2024
+**Type:** Full-Stack 
 **Status:** 🟢 _Completed_  
-**Deployed Site:** [Richyvest](https://easyvest-dev-ed.develop.my.salesforce-sites.com/B_Home#/login)
+**Deployed Site:** [Richyvest](https://easyvest-dev-ed.develop.my.salesforce-sites.com/B_Home)
 
 ## 📖 About Richyvest
 
-Richyvest is a simple yet powerful investment application designed to estimate returns on investments made in ETFs following the MSCI World Index. This project represents a personal milestone, as it marks the completion of my training as a **Junior Web Developer** at [beCode](https://becode.org). The project was built over three weeks in October 2024 as part of my preparation for an internship at [Easyvest](https://easyvest.be). I am proud to say that I had not worked on the techs used before starting the project and was able to quickly apprehend them in order to complete the project.
+Richyvest is a simple yet powerful investment application designed to estimate returns on investments made in ETFs following the MSCI World Index. This project represents a personal milestone, as it marks the completion of my training as a **Junior Web Developer** at [beCode](https://becode.org). The project was built over three weeks in October 2024 as part of my preparation for an internship at [Easyvest](https://easyvest.be). I am proud to say that I had not worked on any of the techs used before starting the project and was able to quickly apprehend them in order to deliver on time.
 
 ## 🚀 Tech Stack
 
@@ -21,9 +22,9 @@ This stack allows for building modern, responsive web applications with robust b
 
 The main purpose of this project was to:
 
-- 🧠 Get familiar with the tech stack used at **Easyvest**
+- 🧠 Get familiar with the tech stack used at **Easyvest** in order to be ready for my internship.
 - 📈 Build a functional app that estimates returns based on the **MSCI World Index**
-- 🏅 Achieve hands-on experience integrating **Salesforce** as the backend
+- 🏅 Achieve hands-on experience integrating **Salesforce** as the backend (User Management)
 
 ## 📸 Screenshots
 
