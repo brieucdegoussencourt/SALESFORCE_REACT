@@ -1,18 +1,41 @@
-# Salesforce DX Project: Next Steps
+# 🌟 Richyvest
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+**Author:** Brieuc de Goussencourt  
+**Date:** October 2024  
+**Status:** 🟢 _Completed_  
+**Deployed Site:** [Richyvest](https://easyvest-dev-ed.develop.my.salesforce-sites.com/B_Home#/login)
 
-## How Do You Plan to Deploy Your Changes?
+## 📖 About Richyvest
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+Richyvest is a simple yet powerful investment application designed to estimate returns on investments made in ETFs following the MSCI World Index. This project represents a personal milestone, as it marks the completion of my training as a **Junior Web Developer** at [beCode](https://becode.org). The project was built over three weeks in October 2024 as part of my preparation for an internship at [Easyvest](https://easyvest.be). I am proud to say that I had not worked on the techs used before starting the project and was able to quickly apprehend them in order to complete the project.
 
-## Configure Your Salesforce DX Project
+## 🚀 Tech Stack
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+- 🖥️ **Frontend**: React, React Router, TypeScript, TailwindCSS  
+- 🔗 **Backend**: Salesforce (Apex, Visualforce)  
+- 🌐 **Deployment**: Salesforce Page
 
-## Read All About It
+This stack allows for building modern, responsive web applications with robust backend integration using Salesforce.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## 🏆 Project Goals
+
+The main purpose of this project was to:
+
+- 🧠 Get familiar with the tech stack used at **Easyvest**
+- 📈 Build a functional app that estimates returns based on the **MSCI World Index**
+- 🏅 Achieve hands-on experience integrating **Salesforce** as the backend
+
+## 📸 Screenshots
+
+Here are some screenshots of Richyvest in action:
+
+1. ![Screenshot 1](/screenshots/screenshot1.png)
+2. ![Screenshot 2](/screenshots/screenshot2.png)
+3. ![Screenshot 3](/screenshots/screenshot3.png)
+4. ![Screenshot 4](/screenshots/screenshot4.png)
+4. ![Screenshot 5](/screenshots/screenshot5.png)
+4. ![Screenshot 6](/screenshots/screenshot.png)
+
+## 🎓 My Journey at beCode
+
+beCode works with **learn-by-doing methodologies**, **active pedagogy**, and promotes values like **inclusion** and **collaboration**. Completing Richyvest has been an incredible experience, consolidating everything I’ve learned in the past months.

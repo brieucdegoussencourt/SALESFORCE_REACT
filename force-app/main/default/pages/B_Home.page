@@ -9,12 +9,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="SHORTCUT ICON" href="{!URLFOR($Resource.Favicon)}"/> 
-    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.SiteSamples,'main.4e30b778.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.SiteSamples,'main.d3466338.css')}" />
   </head>
 
   <body>
     <div id="root"></div>
-    <script type="text/javascript" src="{!URLFOR($Resource.SiteSamples,'main.743bbf99.js')}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.SiteSamples,'main.c45a81ab.js')}"></script>
   </body>
 
   </html>
