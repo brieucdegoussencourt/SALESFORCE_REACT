@@ -2,7 +2,8 @@
 
 **Author:** Brieuc de Goussencourt  
 **Date:** October 2024
-**Type of project:** Web App - Full-Stack - Responsive
+**Type of project:
+** Web App - Full-Stack - Responsive
 **Status:** 🟢 _Completed_  
 **Deployed Site:** [Richyvest](https://easyvest-dev-ed.develop.my.salesforce-sites.com/B_Home)
 
