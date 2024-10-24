@@ -1,6 +1,6 @@
 const performanceData = require('./performance.json');
 
-// Function to get the 10th dataset as an array of key-value pairs
+// Function to get the 10th dataset of performance.json as an array of key-value pairs
 function getTenthDataset(data: { [x: string]: any; }) {
   const tenthDataset = data["10"];
   return Object.entries(tenthDataset);

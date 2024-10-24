@@ -2,8 +2,8 @@ import Title from "./components/Title";
 import { InputAmount, InputDate, Result, Button } from "../models/Inputs";
 import Chart from "./components/Chart";
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEuroSign } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEuroSign } from "@fortawesome/free-solid-svg-icons";
 
 interface MainProps {
   amount: string;
@@ -70,7 +70,7 @@ const Main: React.FC<MainProps> = ({
           />
         </div>
       </div>
-      <div className="bg-cyan-400 text-white text-xl text-cyan-900 font-medium py-3 px-8 rounded hover:from-cyan-900 hover:bg-cyan-900 hover:text-cyan-400 shadow-lg">
+      <div className="anim_btn bg-cyan-400 text-white text-xl text-cyan-900 font-medium py-3 px-8 rounded hover:from-cyan-900 hover:bg-cyan-900 hover:text-cyan-400 shadow-lg">
         <Button onClick={handleButtonClick}>Invest Now</Button>
       </div>
     </div>

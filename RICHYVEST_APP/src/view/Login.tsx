@@ -1,4 +1,3 @@
-// src/components/Login.tsx
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
@@ -19,27 +18,23 @@ const Login: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("handleSubmit called");
 
     try {
       const responseText = await loginUser(loginData);
 
       if (responseText.startsWith("Success")) {
-        console.log("Login successful, calling login() and navigating to /app");
         login();
         navigate("/app");
       } else {
-        console.log("Login failed:", responseText);
         setMessage(responseText || "Login failed.");
       }
     } catch (error: any) {
-      console.error("Error during login:", error);
       setMessage(error.message || "Error logging in.");
     }
   };
 
   return (
-    <div className="flex items-center justify-center h-full mb-24">
+    <div className="flex flex-col items-center justify-center h-full mb-24">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center w-max rounded"
@@ -61,7 +56,7 @@ const Login: React.FC = () => {
           className="mb-4 p-2 bgwhite rounded"
         />
         <div className="bg-cyan-400 text-white text-lg font-medium py-1 px-6 mt-4 rounded hover:text-cyan-900">
-          <button type="submit">Login</button>
+          <button className="anim_btn" type="submit">Login</button>
         </div>
         {message && <p className="text-red-500 mt-4">{message}</p>}
       </form>

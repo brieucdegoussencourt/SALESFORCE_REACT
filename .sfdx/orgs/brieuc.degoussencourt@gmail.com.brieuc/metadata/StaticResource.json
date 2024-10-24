@@ -8,9 +8,22 @@
       "fileName": "staticresources/SiteSamples.resource",
       "fullName": "SiteSamples",
       "id": "081Qy000005FzczIAC",
-      "lastModifiedById": "005Qy000007mSZ4IAM",
-      "lastModifiedByName": "Charles de Brabandere",
-      "lastModifiedDate": "2024-09-24T14:22:55.000Z",
+      "lastModifiedById": "005Qy000007mX45IAE",
+      "lastModifiedByName": "Brieuc de Goussencourt",
+      "lastModifiedDate": "2024-10-24T08:40:28.000Z",
+      "manageableState": "unmanaged",
+      "type": "StaticResource"
+    },
+    {
+      "createdById": "005Qy000007mX45IAE",
+      "createdByName": "Brieuc de Goussencourt",
+      "createdDate": "2024-10-24T09:11:01.000Z",
+      "fileName": "staticresources/Favicon.resource",
+      "fullName": "Favicon",
+      "id": "081Qy000005xJhNIAU",
+      "lastModifiedById": "005Qy000007mX45IAE",
+      "lastModifiedByName": "Brieuc de Goussencourt",
+      "lastModifiedDate": "2024-10-24T09:11:01.000Z",
       "manageableState": "unmanaged",
       "type": "StaticResource"
     }

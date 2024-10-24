@@ -26,7 +26,6 @@ const useRegister = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('handleSubmit called');
 
     const payload = {
       action: 'register',
@@ -46,27 +45,22 @@ const useRegister = () => {
           body: JSON.stringify(payload),
         }
       );
-      console.log('Fetch response received');
 
       let result = await response.text();
-      console.log('API Response:', result);
 
       // Remove surrounding quotes if present
       result = result.trim();
       if (result.startsWith('"') && result.endsWith('"')) {
         result = result.substring(1, result.length - 1);
       }
-      console.log('Cleaned API Response:', result);
 
       if (result.startsWith('Success')) {
         console.log('Registration successful, navigating to /login');
         navigate('/login');
       } else {
-        console.log('Registration failed:', result);
         setMessage(result);
       }
     } catch (error) {
-      console.error('Error registering user:', error);
       setMessage('Error registering user.');
     }
   };

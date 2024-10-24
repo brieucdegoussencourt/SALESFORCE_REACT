@@ -1,6 +1,8 @@
 import React, { ChangeEvent } from "react";
 import { availableDates } from "./RealStockData";
 
+// Components for the input fields, result display, and button of the main page
+
 interface InputAmountProps {
   amount: number;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;

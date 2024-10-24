@@ -1,4 +1,3 @@
-// src/view/components/Chart.tsx
 import React, {useState} from 'react';
 import InvestmentChart from '../../models/InvestmentChart';
 

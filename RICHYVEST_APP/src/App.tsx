@@ -1,5 +1,4 @@
-// App.tsx
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import NavBar from "./view/components/NavBar";
 import Guess from "./controllers/controller";
@@ -15,23 +14,23 @@ function App() {
       <Router>
         <div className="flex flex-col h-dvh">
           <NavBar />
-            <div className="flex-grow flex items-center justify-center">
-              <Routes>
-                {/* Public Routes */}
-                <Route path="/" element={<Welcome />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                {/* Protected Route */}
-                <Route
-                  path="/app"
-                  element={
-                    <ProtectedRoute>
-                      <Guess />
-                    </ProtectedRoute>
-                  }
-                />
-              </Routes>
-            </div>
+          <div className="flex-grow flex items-center justify-center">
+            <Routes>
+              {/* Public Routes */}
+              <Route path="/" element={<Welcome />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              {/* Protected Route */}
+              <Route
+                path="/app"
+                element={
+                  <ProtectedRoute>
+                    <Guess />
+                  </ProtectedRoute>
+                }
+              />
+            </Routes>
+          </div>
           <Footer />
         </div>
       </Router>

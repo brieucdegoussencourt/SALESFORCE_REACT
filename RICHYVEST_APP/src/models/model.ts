@@ -1,8 +1,8 @@
 import { useState, ChangeEvent } from 'react';
 import { stockData } from './RealStockData';
 
-// "useGuessModel" is a custom hook that encapsulates the state and logic for calculating 
-// the stock value based on the investment amount and date.
+// "useGuessModel" is a custom hook that encapsulates the state and logic for the app's main page. 
+// It's the core engine of the app, handling the user's input and calculating the result.
 
 export const useGuessModel = () => {
   const today = new Date();
