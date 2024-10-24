@@ -30,11 +30,13 @@ The main purpose of this project was to:
 
 Here are some screenshots of Richyvest in action:
 
-1. ![Screenshot 1](/screenshots/screenshot1.png)
-2. ![Screenshot 2](/screenshots/screenshot2.png)
-3. ![Screenshot 3](/screenshots/screenshot3.png)
-4. ![Screenshot 4](/screenshots/screenshot4.png)
-5. ![Screenshot 5](/screenshots/screenshot5.png)
+![Screenshot 1](/screenshots/screenshot1.png)
+![Screenshot 2](/screenshots/screenshot2.png)
+<div style="display: flex; justify-content: space-between;">
+  <img src="/screenshots/screenshot3.png" alt="Screenshot 3" style="width: 32%;"/>
+  <img src="/screenshots/screenshot4.png" alt="Screenshot 4" style="width: 32%;"/>
+  <img src="/screenshots/screenshot5.png" alt="Screenshot 5" style="width: 32%;"/>
+</div>
 
 ## 🎓 My Journey at beCode
 
