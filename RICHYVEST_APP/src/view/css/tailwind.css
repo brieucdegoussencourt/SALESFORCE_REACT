@@ -12,25 +12,30 @@ body {
     font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/* Prevent Chrome autofill from changing the background color */
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
-    box-shadow: 0 0 0px 1000px white inset !important;
-  }
-
-/* Custom styles for input date on iPhone */
+/* General styles for date input */
 input[type="date"] {
-    -webkit-appearance: none; /* Removes iOS default styling */
+    -webkit-appearance: none; /* Removes default iOS styling */
     appearance: none; /* Removes default styling in modern browsers */
     background-color: white; /* Ensures the background is white */
-    padding: 0;
-    text-align: center; /* Centers the text */
-    height: 100%; /* Adjust height */
+    padding: 0 !important; /* Removes any unwanted padding */
+    text-align: center !important; /* Centers the text */
+    height: 40px !important; /* Sets a consistent height */
+    line-height: 40px; /* Ensures the text is vertically centered */
+    border-radius: 0.375rem; /* Rounded corners like Tailwind’s default */
+    border: 1px solid #e2e8f0; /* Add a light border for clarity */
+    -webkit-padding-start: 0px; /* Remove padding on iOS */
   }
   
-  /* For more consistent appearance across all devices */
-  input[type="date"]::-webkit-inner-spin-button,
-  input[type="date"]::-webkit-clear-button {
-    display: none;
+  /* Hide the calendar picker icon on iOS Safari */
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0; /* Hide calendar icon */
+  }
+  
+  /* Autofill handling */
+  input:-webkit-autofill {
+    background-color: white !important; /* Keeps background white on autofill */
+    color: black !important; /* Ensures the text color is correct */
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important; /* Overrides Chrome autofill */
+    box-shadow: 0 0 0px 1000px white inset !important;
   }
 

@@ -46,7 +46,7 @@ const Main: React.FC<MainProps> = ({
               Choose an investment date
             </small>
             <InputDate
-              className="bg-white rounded h-8 w-full text-base text-center appearance-none"
+              className="bg-white text-black rounded h-8 w-full text-base text-center appearance-none focus:outline-none focus:ring-2 focus:ring-cyan-600"
               date={date}
               handleChange={handleDateChange}
             />
