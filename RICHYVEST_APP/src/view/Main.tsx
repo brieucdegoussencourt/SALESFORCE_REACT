@@ -46,12 +46,19 @@ const Main: React.FC<MainProps> = ({
               Choose an investment date
             </small>
             <InputDate
-              className="bg-white text-black rounded h-8 w-full text-base text-center appearance-none focus:outline-none focus:ring-2 focus:ring-cyan-600"
+              // className="inputDate text-black h-8 w-full text-base focus:outline-none focus:ring-2 focus:ring-cyan-600"
+              className="w-full px-4 py-1 text-center appearance-none 
+                   bg-white border rounded shadow-sm 
+                   focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                   [&::-webkit-date-and-time-value]:text-center
+                   [&::-webkit-calendar-picker-indicator]:absolute 
+                   [&::-webkit-calendar-picker-indicator]:right-2
+                   [&::-webkit-calendar-picker-indicator]:top-1/2
+                   [&::-webkit-calendar-picker-indicator]:-translate-y-1/2"
               date={date}
               handleChange={handleDateChange}
             />
           </div>
-
           <div className="flex flex-col mt-6 justify-center items-center">
             <label className="text-white text-lg font-medium mb-4 text-center">
               Today you would be rich!
