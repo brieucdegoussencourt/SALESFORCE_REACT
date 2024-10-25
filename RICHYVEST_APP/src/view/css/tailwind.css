@@ -18,3 +18,19 @@ input:-webkit-autofill {
     box-shadow: 0 0 0px 1000px white inset !important;
   }
 
+/* Custom styles for input date on iPhone */
+input[type="date"] {
+    -webkit-appearance: none; /* Removes iOS default styling */
+    appearance: none; /* Removes default styling in modern browsers */
+    background-color: white; /* Ensures the background is white */
+    padding: 0;
+    text-align: center; /* Centers the text */
+    height: 100%; /* Adjust height */
+  }
+  
+  /* For more consistent appearance across all devices */
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-clear-button {
+    display: none;
+  }
+

@@ -28,9 +28,15 @@ The main purpose of this project was to:
 
 - 🧠 Get familiar with the tech stack used at **Easyvest** in order to be ready for my internship.
 - 📈 Build a functional app that estimates returns based on the **MSCI World Index**
-- 🏅 Achieve hands-on experience integrating **Salesforce** as the backend (User Management)
+- 🏅 Achieve hands-on experience integrating **Salesforce** as the backend (User Management through API)
 
 ![Screenshot 3](/screenshots/screenshot_mobile.png)
+
+## 😃 What I am proud of
+
+- ✨ Adaptability: I rapidly leaned new techs.
+- 🖼️ Design: Working on UX and UI to reach a professionnal look and feel.
+- 🏁 Deadline management: project was deliverd withing three weeks with proper documentation.
 
 ## 🎓 My Journey at beCode
 
